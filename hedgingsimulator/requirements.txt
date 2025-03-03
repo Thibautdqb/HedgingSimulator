@@ -10,3 +10,4 @@ gunicorn  # Serveur pour le déploiement
 requests  # Si des requêtes API sont nécessaires
 flask-session  # Gestion des sessions utilisateur
 flask-caching  # Pour améliorer les performances
+flask-cors
