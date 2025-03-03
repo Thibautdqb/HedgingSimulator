@@ -24,6 +24,8 @@ import time
 
 
 import yfinance as yf
+from flask_cors import CORS
+CORS(app)  # Active CORS pour toutes les routes
 
 app = Flask(__name__)
 app.secret_key = 'TFGYUOIZV'
