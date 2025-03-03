@@ -25,10 +25,10 @@ import time
 
 import yfinance as yf
 from flask_cors import CORS
-CORS(app)  # Active CORS pour toutes les routes
 
 app = Flask(__name__)
 app.secret_key = 'TFGYUOIZV'
+CORS(app)  # Active CORS pour toutes les routes
 
 # Créer un DataFrame vide pour stocker les données
 portfolio_df = pd.DataFrame(columns=['StockID', 'PositionType', 'StockQty', 'OpenDate'])
