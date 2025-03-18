@@ -77,3 +77,56 @@
 - Coût de la couverture et exposition cible
 - Volatilité et risques résiduels
 - Résultats visuels sur la couverture (graphiques et tableaux)
+
+
+# Visualisation des Échanges de Données dans l'Application
+
+## Diagramme Mermaid : Échanges entre Utilisateur, Frontend, Flask Backend, Redis, Celery, yfinance, et Plotly
+
+Voici une visualisation des échanges de données dans votre application, représentée sous forme de diagramme Mermaid :
+
+### Diagramme des échanges (Sequence Diagram)
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Frontend as Frontend (HTML/JS)
+    participant Flask as Flask Backend
+    participant Redis
+    participant Celery
+    participant yfinance
+    participant Plotly
+
+    User->>Frontend: 1. Soumet formulaire portfolio (POST /api/portfolio-modeling)
+    Frontend->>Flask: 2. Données JSON (positions)
+    Flask->>Redis: 3. Stocke portfolio_df_{user_id}
+    
+    User->>Frontend: 4. Demande historique (GET /get_historical_data)
+    Frontend->>Flask: 5. Requête historique
+    Flask->>yfinance: 6. Récupère données marché
+    yfinance-->>Flask: 7. Données historiques
+    Flask->>Redis: 8. Stocke all_data_{user_id}
+    
+    User->>Frontend: 9. Accède visualisation (GET /Visualization)
+    Frontend->>Flask: 10. Requête visualisation
+    Flask->>Redis: 11. Récupère all_data + portfolio_df
+    Flask->>Plotly: 12. Génère graphiques
+    Plotly-->>Flask: 13. HTML des visualisations
+    Flask-->>Frontend: 14. Page avec graphiques
+    
+    User->>Frontend: 15. Configure hedging (POST /api/delta)
+    Frontend->>Flask: 16. Paramètres hedging
+    Flask->>Redis: 17. Stocke hedging_info_{user_id}
+    
+    User->>Frontend: 18. Lance calcul hedging (GET /hedge)
+    Frontend->>Flask: 19. Requête optimisation
+    Flask->>Redis: 20. Récupère toutes données
+    Flask->>Celery: 21. Tâche d'optimisation
+    Celery->>Flask: 22. Résultats optimisation
+    Flask->>Redis: 23. Stocke options_df_{user_id}
+    Flask-->>Frontend: 24. Résultats couverture
+    
+    User->>Frontend: 25. Export Excel (GET /export_to_xlsx)
+    Frontend->>Flask: 26. Requête export
+    Flask->>Redis: 27. Récupère all_data
+    Flask-->>Frontend: 28. Fichier Excel
