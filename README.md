@@ -129,12 +129,18 @@ sequenceDiagram
     User->>Frontend: 25. Export Excel (GET /export_to_xlsx)
     Frontend->>Flask: 26. Requête export
     Flask->>Redis: 27. Récupère all_data
-    Flask-->>Frontend: 28. Fichier Excel
+    Flask-->>Frontend: 28. Fichier Excel 
+
+```
 
 
+### Flux Analytique
 
+Voici le diagramme Mermaid représentant le flux analytique dans l'application, montrant comment les requêtes sont enregistrées, analysées en temps réel, et affichées sur le tableau de bord Plotly :
 
-    graph LR
-    A[Requête] --> B[Log dans analytics.json]
-    B --> C[Analyse temps réel]
-    C --> D[Dashboard Plotly]
+```mermaid
+graph LR
+A[Requête] --> B[Log dans analytics.json]
+B --> C[Analyse temps réel]
+C --> D[Dashboard Plotly]
+```
