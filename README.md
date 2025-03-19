@@ -148,7 +148,8 @@ C --> D[Dashboard Plotly]
 
 ```mermaid
 graph TD
-    A[Stratégie de Couverture du Portefeuille] --> B[1. Chargement des Données]
+    A[Stratégie de Couverture du Portefeuille] 
+    A --> B[1. Chargement des Données]
     B --> B1[Données d'Actifs (all_data)]
     B --> B2[Données des Options (options_df)]
     B --> B3[Informations de Couverture (hedging_info)]
@@ -227,6 +228,7 @@ graph TD
     K --> K2[Coût de la couverture et exposition cible]
     K --> K3[Volatilité et risques résiduels]
     K --> K4[Résultats visuels sur la couverture (graphiques et tableaux)]
+
 
 ```
 ### LOOOOl
