@@ -130,3 +130,11 @@ sequenceDiagram
     Frontend->>Flask: 26. Requête export
     Flask->>Redis: 27. Récupère all_data
     Flask-->>Frontend: 28. Fichier Excel
+
+
+
+
+graph LR
+A[Requête] --> B[Log dans analytics.json]
+B --> C[Analyse temps réel]
+C --> D[Dashboard Plotly]
