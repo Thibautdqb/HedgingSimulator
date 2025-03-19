@@ -230,5 +230,3 @@ graph TD
     K --> K4[Résultats visuels sur la couverture (graphiques et tableaux)]
 
 
-```
-### LOOOOl
