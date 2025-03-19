@@ -106,7 +106,7 @@ graph TD
     D --> D1[Exposition pour chaque action]
     D1 --> D1_1[Valeur des Positions : position_quantity * current_price]
     D1 --> D1_2[PositionValue : enriched_portfolio_df['PositionValue']]
-    D1 --> D1_3[Couverture selon le type de couverture (delta, gamma, etc.)]
+    D1 --> D1_3[Couverture selon le type de couverture]
 
     A --> E[3. Calcul des Matrices de Covariance et de Corrélation]
     E --> E1[Matrice de Covariance (liens entre actifs)]
