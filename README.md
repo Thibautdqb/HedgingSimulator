@@ -134,7 +134,7 @@ sequenceDiagram
 
 
 
-graph LR
-A[Requête] --> B[Log dans analytics.json]
-B --> C[Analyse temps réel]
-C --> D[Dashboard Plotly]
+    graph LR
+    A[Requête] --> B[Log dans analytics.json]
+    B --> C[Analyse temps réel]
+    C --> D[Dashboard Plotly]
