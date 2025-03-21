@@ -180,5 +180,3 @@ La gestion des utilisateurs est effectuée via un identifiant unique généré p
    - Résultats visuels sur la couverture (graphiques et tableaux).
 
 ---
-
-Ce **README** présente toutes les informations détaillées concernant l'application de gestion de portefeuille avec couverture dynamique, sa mise en œuvre et ses fonctionnalités essentielles. Vous pouvez l'utiliser comme un guide pour utiliser l'application ou comme référence pour le développement.
